@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="640"
+   height="480"
+   viewBox="0 0 169.33333 127"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r"
+   sodipodi:docname="menu.svg"
+   inkscape:export-filename="/home/ivan/Downloads/ics3u-summative-master/ics3u-summative-master/assets/backgrounds/menu.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="362.24666"
+     inkscape:cy="208.93067"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1276"
+     inkscape:window-height="1000"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:0.5;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+       id="rect4488"
+       width="193.52382"
+       height="139.42857"
+       x="-5.0793648"
+       y="167.73016"
+       transform="translate(0,-170)" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-170)">
+    <g
+       id="g4505"
+       transform="translate(7.0510368,15.810437)"
+       inkscape:export-filename="/home/ivan/Documents/Git/ics3u-summative/assets/sprites/menu/settings.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         ry="3.891479"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.6046586;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         id="rect20"
+         width="39.39534"
+         height="17.077343"
+         x="41.601009"
+         y="228.80989" />
+      <text
+         id="text833"
+         y="238.97636"
+         x="49.753647"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-size:6.3499999px;stroke-width:0.26458332"
+           y="238.97636"
+           x="49.753647"
+           id="tspan831"
+           sodipodi:role="line">Settings</tspan></text>
+    </g>
+    <g
+       id="g4513"
+       transform="translate(53.716686,15.810437)"
+       inkscape:export-filename="/home/ivan/Documents/Git/ics3u-summative/assets/sprites/menu/exit.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g4518">
+        <rect
+           ry="3.891479"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.6046586;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+           id="rect4507"
+           width="39.39534"
+           height="17.077343"
+           x="41.601009"
+           y="228.80989" />
+        <text
+           id="text4511"
+           y="239.60579"
+           x="55.961021"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           xml:space="preserve"><tspan
+             style="font-size:6.3499999px;stroke-width:0.26458332"
+             y="239.60579"
+             x="55.961021"
+             id="tspan4509"
+             sodipodi:role="line">Exit</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(7.0157738,-1.3125e-6)"
+       id="g4523"
+       inkscape:export-filename="/home/ivan/Documents/Git/ics3u-summative/assets/sprites/menu/play.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         ry="5.0781212"
+         rx="6.4813018"
+         y="207.46361"
+         x="41.636272"
+         height="21.381559"
+         width="86.060997"
+         id="rect18"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00000119;stroke-linejoin:miter;stroke-miterlimit:2.4000001;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill" />
+      <text
+         id="text829"
+         y="220.42607"
+         x="76.39637"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="220.42607"
+           x="76.39637"
+           id="tspan827"
+           sodipodi:role="line">Play</tspan></text>
+    </g>
+  </g>
+</svg>

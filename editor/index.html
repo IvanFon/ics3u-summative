@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>ICS3U Summative Level Editor</title>
+    <meta name="description" content="Level editor for my ICS3U summative game.">
+    <meta name="author" content="Ivan Fonseca">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+</head>
+<body>
+    <div class="row">
+        <div class="offset-by-one six columns">
+            <canvas id="canvas" width="640" height="480"></canvas>
+        </div>
+        <div class="four columns">
+            <form>
+                <h4>Tiles:</h4>
+                <label>
+                    <input type="radio" name="tile" value="0">
+                    <span class="label-body">green (solid)</span>
+                </label>
+                <label>
+                    <input type="radio" name="tile" value="1" checked>
+                    <span class="label-body">blue</span>
+                </label>
+                <label>
+                    <input type="radio" name="tile" value="2">
+                    <span class="label-body">orange (next level, solid)</span>
+                </label>
+                <h4>Other:</h4>
+                <label>
+                    <input type="radio" name="tile" value="spawn">
+                    <span class="label-body">spawn</span>
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="offset-by-two eight columns">
+            <hr>
+            <h3>Export</h3>
+            <p>Copy the text below into a .txt file and save it in "assets/levels/user".</p>
+            <textarea id="save" cols="100" rows="32" readonly></textarea>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
