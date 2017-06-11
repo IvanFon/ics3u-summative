@@ -8,6 +8,7 @@
 #include <stdio.h>
 
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_native_dialog.h>
 
 #include "../inc/Quit.h"
 #include "../inc/Utils.h"
@@ -15,30 +16,49 @@
 #include "../inc/Init.h"
 #include "../inc/Constants.h"
 #include "../inc/Assets.h"
+#include "../inc/Text.h"
+#include "../inc/Game.h"
+#include "../inc/Level.h"
 
-void getUserLevels(char *arr[]) {
-    // Open user level directory
-    ALLEGRO_FS_ENTRY *dir = al_create_fs_entry("assets/levels/user/");
-    if (!al_open_directory(dir)) {
-        fprintf(stderr, "Error creating user level directory entry!\n");
-        quitGame();
-    }
-    
-    // Loop through levels
-    ALLEGRO_FS_ENTRY *file;
-    for (int i = 0; file = al_read_directory(dir); i++) {
-        // Get filename only and add it to the array
-        arr[i] = (char *) getFilename(al_get_fs_entry_name(file));
-        al_destroy_fs_entry(file);
+bool campaign = false;
+Level usrLvl;
+
+int pickFile(char *str, int size) {
+    // Create a file picker
+    ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("./assets/levels/user/.", "Open a level", "*.*", ALLEGRO_FILECHOOSER_FILE_MUST_EXIST);
+    if (!dialog) {
+        fprintf(stderr, "Error opening file picker!\n");
+        al_destroy_native_file_dialog(dialog);
+        return 0;
     }
 
-    al_destroy_fs_entry(dir);
+    al_show_native_file_dialog(display, dialog);
+    if (al_get_native_file_dialog_count(dialog) > 0) {
+        snprintf(str, size, "%s", (char *) al_get_native_file_dialog_path(dialog, 0));
+    } else {
+        al_destroy_native_file_dialog(dialog);
+        return 0;
+    }
+    al_destroy_native_file_dialog(dialog);
+
+    return 1;
 }
 
 void showLevelSelect() {
     bool redraw = false;
     bool mouseDown = false;
+    bool hover[3] = { false };
     bool backHover = false;
+    Sprite playSprites[] = {
+        lvlSelectCampaignSprite[0],
+        lvlSelectChooseSprite[0],
+        lvlSelectBackSprite[0]
+    };
+    Sprite playSpritesHover[] = {
+        lvlSelectCampaignSprite[1],
+        lvlSelectChooseSprite[1],
+        lvlSelectBackSprite[1]
+    };
     al_start_timer(timer);
     while (true) {
         // Get events
@@ -77,25 +97,36 @@ void showLevelSelect() {
                 break;
         } // \switch
 
-        // Check if cursor is touching button
-        for (int i = 0; i < 1; i++) {
-            if (pointRect(mouse, lvlSelectBackSprite[0].rect)) {
+        // Check if cursor is touching back button
+        for (int i = 0; i < 3; i++) {
+            if (pointRect(mouse, playSprites[i].rect)) {
                 if (mouseDown) {
+                    char usrPath[100];
                     switch (i) {
-                        // Back button
-                        case 0:
+                        case PLAY_CAMPAIGN:
+                            campaign = true;
+                            gameLoop();
+                            break;
+                        case PLAY_CHOOSE:
+                            if (pickFile(usrPath, 100)) {
+                                // Load this level
+                                if (loadLevel(usrPath, usrLvl)) {
+                                    campaign = false;
+                                    gameLoop();
+                                } else {
+                                    fprintf(stderr, "Error loading user level \"%s\"!\n", usrPath);
+                                }
+                            }
+                            break;
+                        case PLAY_BACK:
                             return;
                             break;
                     }
                 } else {
-                    if (i == 0) {
-                        backHover = true;
-                    }
+                    hover[i] = true;
                 }
             } else {
-                if (i == 0) {
-                    backHover = false;
-                }
+                hover[i] = false;
             }
         }
 
@@ -107,8 +138,13 @@ void showLevelSelect() {
             redraw = false;
             al_clear_to_color(COL_BLACK);
 
-            // Draw back button
-            drawSprite((backHover) ? lvlSelectBackSprite[1] : lvlSelectBackSprite[0]);
+            // Draw buttons
+            for (int i = 0; i < 3; i++) {
+                drawSprite(
+                    (hover[i]) ?
+                    playSpritesHover[i] :
+                    playSprites[i]);
+            }
 
             al_flip_display();
         }

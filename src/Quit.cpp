@@ -27,14 +27,12 @@ void quitGame() {
     }
     for (int i = 0; i < 2; i++) {
         al_destroy_bitmap(settingsBackSprite[i].texture);
-    }
-    for (int i = 0; i < 2; i++) {
         al_destroy_bitmap(lvlSelectBackSprite[i].texture);
+        al_destroy_bitmap(lvlSelectCampaignSprite[i].texture);
+        al_destroy_bitmap(lvlSelectChooseSprite[i].texture);
     }
     for (int i = 0; i < NUM_MENU_SPRITES; i++) {
         al_destroy_bitmap(menuSprites[i].texture);
-    }
-    for (int i = 0; i < NUM_MENU_SPRITES; i++) {
         al_destroy_bitmap(menuSpritesHover[i].texture);
     }
     al_destroy_config(config);

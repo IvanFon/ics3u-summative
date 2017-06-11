@@ -24,6 +24,10 @@ extern Sprite menuSprites[NUM_MENU_SPRITES];
 extern Sprite menuSpritesHover[NUM_MENU_SPRITES];
 /// @brief Settings back button sprite (0 = normal, 1 = hover)
 extern Sprite settingsBackSprite[2];
+/// @brief Level select campaign button sprite
+extern Sprite lvlSelectCampaignSprite[2];
+/// @brief Level select choose button sprite
+extern Sprite lvlSelectChooseSprite[2];
 /// @brief Level select back button sprite
 extern Sprite lvlSelectBackSprite[2];
 /// @brief Player Sprite

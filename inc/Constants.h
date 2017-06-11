@@ -58,9 +58,23 @@ extern const char *SETTINGS_BACK_PATH;
 /// @brief Settings back button hoverer sprite
 extern const char *SETTINGS_BACK_HOVER_PATH;
 
-/// @brief Level select back button position
-extern const Vector LVL_SELECT_BACK_POS;
+/// @brief Campaign button sprite path
+extern const char *LVL_SELECT_CAMPAIGN_PATH;
+/// @brief Campaign button hover sprite path
+extern const char *LVL_SELECT_CAMPAIGN_HOVER_PATH;
+/// @brief Level select button sprite path
+extern const char *LVL_SELECT_CHOOSE_PATH;
+/// @brief Level select button hover sprite path
+extern const char *LVL_SELECT_CHOOSE_HOVER_PATH;
 
+/// @brief Play screen buttons
+enum PLAY_BUTTONS {
+    PLAY_CAMPAIGN = 0,
+    PLAY_CHOOSE = 1,
+    PLAY_BACK = 2
+};
+/// @brief Play screen button locations
+extern const Vector PLAY[];
 /// @brief Settings file
 extern const char *SETTINGS_PATH;
 

@@ -1,5 +1,5 @@
 PROJECT_NAME = "ics3u-summative"
-PROJECT_NUMBER = 0.10
+PROJECT_NUMBER = 1.0
 PROJECT_BRIEF = "My ICS3U summative game."
 
 OUTPUT_DIRECTORY = ./doc

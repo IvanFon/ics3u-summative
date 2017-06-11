@@ -10,7 +10,7 @@
 
 const char *TEXTURE_FOLDER = "assets/tiles/";
 
-const char *LVL_FOLDER = (char *)"assets/levels/";
+const char *LVL_FOLDER = (char *)"assets/levels/campaign/";
 
 const char *MENU_SPRITE_PATHS[] = {
     "assets/sprites/menu/play.png",
@@ -46,7 +46,16 @@ const Rectangle SETTINGS[] = {
 const char *SETTINGS_BACK_PATH = "assets/sprites/back.png";
 const char *SETTINGS_BACK_HOVER_PATH = "assets/sprites/back-down.png";
 
-const Vector LVL_SELECT_BACK_POS = { 244.5, 300 };
+const char *LVL_SELECT_CAMPAIGN_PATH = "assets/sprites/campaign.png";
+const char *LVL_SELECT_CAMPAIGN_HOVER_PATH = "assets/sprites/campaign-down.png";
+const char *LVL_SELECT_CHOOSE_PATH = "assets/sprites/choose.png";
+const char *LVL_SELECT_CHOOSE_HOVER_PATH = "assets/sprites/choose-down.png";
+
+const Vector PLAY[] = {
+    { 155.5, 140.0 },
+    { 332.6, 140.0 },
+    { 244.5, 250.0 }
+};
 
 const char *SETTINGS_PATH = "assets/settings.ini";
 

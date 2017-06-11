@@ -34,3 +34,6 @@ main
 
 # Documentation
 doc
+
+# VS Code config
+.vscode

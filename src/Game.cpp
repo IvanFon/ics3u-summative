@@ -14,6 +14,7 @@
 #include "../inc/Player.h"
 #include "../inc/Level.h"
 #include "../inc/States.h"
+#include "../inc/LevelSelect.h"
 
 int curLvl = 0;
 bool levelLoaded = false;
@@ -26,7 +27,7 @@ void gameLoop() {
         // Finish loading level
         if (!levelLoaded) {
             levelLoaded = true;
-            player.rect.pos = levels[curLvl].spawn;
+            player.rect.pos = (campaign) ? levels[curLvl].spawn : usrLvl.spawn;
         }
         
         // Get events
@@ -67,7 +68,7 @@ void gameLoop() {
         if (redraw && al_is_event_queue_empty(evQueue)) {
             redraw = false;
             al_clear_to_color(COL_BLACK);
-            drawLevel(textures, levels[curLvl]);
+            drawLevel(textures, (campaign) ? levels[curLvl] : usrLvl);
             al_draw_bitmap(player.texture, player.rect.pos.x, player.rect.pos.y, 0);
             al_flip_display();
         }

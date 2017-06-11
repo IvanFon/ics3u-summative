@@ -12,6 +12,8 @@
 #include "../inc/Utils.h"
 #include "../inc/States.h"
 #include "../inc/Input.h"
+#include "../inc/Menu.h"
+#include "../inc/LevelSelect.h"
 
 Vector playerVel = { 0, 0 };
 
@@ -19,15 +21,25 @@ void handleCollisions(bool xAxis = true) {
     for (int y = 0; y < LVL_HEIGHT; y++) {
         for (int x = 0; x < LVL_WIDTH; x++) {
             // Store current tile
-            Tile curTile = levels[curLvl].tiles[y][x];
+            Tile curTile = (campaign) ? levels[curLvl].tiles[y][x] : usrLvl.tiles[y][x];
 
             // Check if this is a solid tile
             if (contains(SOLID_TILES, NUM_SOLID_TILES, curTile.texture)) {
                 if (collides(player.rect, curTile.rect)) {
                     // Check if its the change level tile
                 	if (curTile.texture == 2) {
+                        // Reset velocity
+                        playerVel = { 0, 0 };
+                        // Reset input
+                        input = { false, false, false, false, false, false };
                         // Change level
-                        curLvl++;
+                        if (curLvl == NUM_LEVELS - 1 || !campaign) {
+                            curLvl = 0;
+                            levelLoaded = false;
+                            showMenu();
+                        } else {
+                            curLvl++;
+                        }
                         levelLoaded = false;
 					} else if (xAxis) {
                         player.rect.pos.x += collisionDepthX(player.rect, curTile.rect);

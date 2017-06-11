@@ -25,6 +25,8 @@ ALLEGRO_BITMAP *textures[NUM_TEXTURES];
 Sprite menuSprites[NUM_MENU_SPRITES];
 Sprite menuSpritesHover[NUM_MENU_SPRITES];
 Sprite settingsBackSprite[2];
+Sprite lvlSelectCampaignSprite[2];
+Sprite lvlSelectChooseSprite[2];
 Sprite lvlSelectBackSprite[2];
 Sprite player;
 
@@ -90,16 +92,46 @@ int loadAssets() {
     lvlSelectBackSprite[1].texture = al_load_bitmap(SETTINGS_BACK_HOVER_PATH);
     if (!settingsBackSprite[0].texture || !settingsBackSprite[1].texture || !lvlSelectBackSprite[0].texture || !lvlSelectBackSprite[1].texture) {
         fprintf(stderr, "Error loading settings back button sprite!\n");
+        return 0;
     }
 
     for (int i = 0; i < 2; i++) {
         settingsBackSprite[i].rect = SETTINGS[SETTING_BACK];
     }
     for (int i = 0; i < 2; i++) {
-        lvlSelectBackSprite[i].rect.pos = LVL_SELECT_BACK_POS;
+        lvlSelectBackSprite[i].rect.pos = PLAY[PLAY_BACK];
         lvlSelectBackSprite[i].rect.size = {
              (float) al_get_bitmap_width(lvlSelectBackSprite[i].texture),
              (float) al_get_bitmap_height(lvlSelectBackSprite[i].texture)
+        };
+    }
+
+    // Level select campaign button
+    lvlSelectCampaignSprite[0].texture = al_load_bitmap(LVL_SELECT_CAMPAIGN_PATH);
+    lvlSelectCampaignSprite[1].texture = al_load_bitmap(LVL_SELECT_CAMPAIGN_HOVER_PATH);
+    if (!lvlSelectCampaignSprite[0].texture || !lvlSelectCampaignSprite[1].texture) {
+        fprintf(stderr, "Error loading campaign button sprite!\n");
+        return 0;
+    }
+    for (int i = 0 ; i < 2; i++) {
+        lvlSelectCampaignSprite[i].rect.pos = PLAY[PLAY_CAMPAIGN];
+        lvlSelectCampaignSprite[i].rect.size = {
+            (float) al_get_bitmap_width(lvlSelectCampaignSprite[i].texture),
+            (float) al_get_bitmap_height(lvlSelectCampaignSprite[i].texture)
+        };
+    }
+
+    // Level select choose button
+    lvlSelectChooseSprite[0].texture = al_load_bitmap(LVL_SELECT_CHOOSE_PATH);
+    lvlSelectChooseSprite[1].texture = al_load_bitmap(LVL_SELECT_CHOOSE_HOVER_PATH);
+    if (!lvlSelectChooseSprite[0].texture || !lvlSelectChooseSprite[1].texture) {
+        fprintf(stderr, "Error loading choose level button sprite!\n");
+    }
+    for (int i = 0; i < 2; i++) {
+        lvlSelectChooseSprite[i].rect.pos = PLAY[PLAY_CHOOSE];
+        lvlSelectChooseSprite[i].rect.size = {
+            (float) al_get_bitmap_width(lvlSelectChooseSprite[i].texture),
+            (float) al_get_bitmap_height(lvlSelectChooseSprite[i].texture)
         };
     }
 
@@ -115,13 +147,6 @@ int loadAssets() {
         (float) al_get_bitmap_width(player.texture),
         (float) al_get_bitmap_height(player.texture)
     };
-
-    //char *lvls[100] = { NULL };
-    //getUserLevels(lvls);
-
-    //for (int i = 0; lvls[i]; i++) {
-        //printf("Level %d: %s\n", i, lvls[i]);
-    //}
 
     return 1;
 }

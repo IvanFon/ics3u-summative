@@ -128,10 +128,6 @@ void drawSettings() {
             al_draw_text(fonts.robotoReg, COL_WHITE, SCREEN.x / 2, 175, ALLEGRO_ALIGN_CENTRE, "Audio:");
             al_draw_text(fonts.robotoReg, COL_WHITE, SCREEN.x / 2, 200, ALLEGRO_ALIGN_CENTRE, (getSetting("audio", "on")) ? "On" : "Off");
 
-            char wew[50];
-            snprintf(wew, sizeof(wew), "%.1f %.1f", mouse.x, mouse.y);
-            al_draw_text(fonts.robotoReg, COL_WHITE, 0, 0, ALLEGRO_ALIGN_LEFT, wew);
-
             al_flip_display();
         }
     }
