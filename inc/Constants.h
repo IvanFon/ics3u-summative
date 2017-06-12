@@ -66,12 +66,17 @@ extern const char *LVL_SELECT_CAMPAIGN_HOVER_PATH;
 extern const char *LVL_SELECT_CHOOSE_PATH;
 /// @brief Level select button hover sprite path
 extern const char *LVL_SELECT_CHOOSE_HOVER_PATH;
+/// @brief Level select editor button sprite path
+extern const char *LVL_SELECT_EDITOR_PATH;
+/// @brief Level select editor hover sprite path
+extern const char *LVL_SELECT_EDITOR_HOVER_PATH;
 
 /// @brief Play screen buttons
 enum PLAY_BUTTONS {
     PLAY_CAMPAIGN = 0,
-    PLAY_CHOOSE = 1,
-    PLAY_BACK = 2
+    PLAY_CHOOSE,
+    PLAY_EDITOR,
+    PLAY_BACK
 };
 /// @brief Play screen button locations
 extern const Vector PLAY[];

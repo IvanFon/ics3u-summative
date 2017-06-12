@@ -50,11 +50,14 @@ const char *LVL_SELECT_CAMPAIGN_PATH = "assets/sprites/campaign.png";
 const char *LVL_SELECT_CAMPAIGN_HOVER_PATH = "assets/sprites/campaign-down.png";
 const char *LVL_SELECT_CHOOSE_PATH = "assets/sprites/choose.png";
 const char *LVL_SELECT_CHOOSE_HOVER_PATH = "assets/sprites/choose-down.png";
+const char *LVL_SELECT_EDITOR_PATH = "assets/sprites/editor.png";
+const char *LVL_SELECT_EDITOR_HOVER_PATH = "assets/sprites/editor-down.png";
 
 const Vector PLAY[] = {
-    { 155.5, 140.0 },
-    { 332.6, 140.0 },
-    { 244.5, 250.0 }
+    { 155.5, 100.0 },
+    { 332.6, 100.0 },
+    { 332.6, 200.0 },
+    { 244.5, 300.0 }
 };
 
 const char *SETTINGS_PATH = "assets/settings.ini";

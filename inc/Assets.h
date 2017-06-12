@@ -28,6 +28,8 @@ extern Sprite settingsBackSprite[2];
 extern Sprite lvlSelectCampaignSprite[2];
 /// @brief Level select choose button sprite
 extern Sprite lvlSelectChooseSprite[2];
+/// @brief Level select editor button sprite
+extern Sprite lvlSelectEditorSprite[2];
 /// @brief Level select back button sprite
 extern Sprite lvlSelectBackSprite[2];
 /// @brief Player Sprite

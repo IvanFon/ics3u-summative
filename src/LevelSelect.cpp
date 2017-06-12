@@ -52,11 +52,13 @@ void showLevelSelect() {
     Sprite playSprites[] = {
         lvlSelectCampaignSprite[0],
         lvlSelectChooseSprite[0],
+        lvlSelectEditorSprite[0],
         lvlSelectBackSprite[0]
     };
     Sprite playSpritesHover[] = {
         lvlSelectCampaignSprite[1],
         lvlSelectChooseSprite[1],
+        lvlSelectEditorSprite[1],
         lvlSelectBackSprite[1]
     };
     al_start_timer(timer);
@@ -98,7 +100,7 @@ void showLevelSelect() {
         } // \switch
 
         // Check if cursor is touching back button
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             if (pointRect(mouse, playSprites[i].rect)) {
                 if (mouseDown) {
                     char usrPath[100];
@@ -117,6 +119,14 @@ void showLevelSelect() {
                                     fprintf(stderr, "Error loading user level \"%s\"!\n", usrPath);
                                 }
                             }
+                            break;
+                        case PLAY_EDITOR:
+                            // Open the editor in web browser
+                            #ifdef _WIN32
+                                system("start \"\" editor/index.html");
+                            #else
+                                system("xdg-open editor/index.html");
+                            #endif
                             break;
                         case PLAY_BACK:
                             return;
@@ -139,7 +149,7 @@ void showLevelSelect() {
             al_clear_to_color(COL_BLACK);
 
             // Draw buttons
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 4; i++) {
                 drawSprite(
                     (hover[i]) ?
                     playSpritesHover[i] :

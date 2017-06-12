@@ -27,6 +27,7 @@ Sprite menuSpritesHover[NUM_MENU_SPRITES];
 Sprite settingsBackSprite[2];
 Sprite lvlSelectCampaignSprite[2];
 Sprite lvlSelectChooseSprite[2];
+Sprite lvlSelectEditorSprite[2];
 Sprite lvlSelectBackSprite[2];
 Sprite player;
 
@@ -132,6 +133,20 @@ int loadAssets() {
         lvlSelectChooseSprite[i].rect.size = {
             (float) al_get_bitmap_width(lvlSelectChooseSprite[i].texture),
             (float) al_get_bitmap_height(lvlSelectChooseSprite[i].texture)
+        };
+    }
+
+    // Level select editor button
+    lvlSelectEditorSprite[0].texture = al_load_bitmap(LVL_SELECT_EDITOR_PATH);
+    lvlSelectEditorSprite[1].texture = al_load_bitmap(LVL_SELECT_EDITOR_HOVER_PATH);
+    if (!lvlSelectEditorSprite[0].texture || !lvlSelectEditorSprite[1].texture) {
+        fprintf(stderr, "Error loading editor button sprite!\n");
+    }
+    for (int i = 0; i < 2; i++) {
+        lvlSelectEditorSprite[i].rect.pos = PLAY[PLAY_EDITOR];
+        lvlSelectEditorSprite[i].rect.size = {
+            (float) al_get_bitmap_width(lvlSelectEditorSprite[i].texture),
+            (float) al_get_bitmap_height(lvlSelectEditorSprite[i].texture)
         };
     }
 
