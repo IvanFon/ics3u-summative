@@ -16,13 +16,14 @@
 #include "../inc/Sprite.h"
 #include "../inc/Constants.h"
 #include "../inc/LevelSelect.h"
+#include "../inc/Instructions.h"
 
 void showMenu() {
     // Menu loop
 
     bool redraw = true;
     bool mouseDown = false;
-    bool menuHover[3] = { false };
+    bool menuHover[NUM_MENU_SPRITES] = { false };
 
     al_clear_to_color(COL_BLACK);
 
@@ -81,6 +82,9 @@ void showMenu() {
                             break;
                         case MENU_EXIT:
                             quitGame();
+                            break;
+                        case MENU_HOWTO:
+                            showIntructions();
                             break;
                     }
                 } else {

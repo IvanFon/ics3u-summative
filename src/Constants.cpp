@@ -15,17 +15,20 @@ const char *LVL_FOLDER = (char *)"assets/levels/campaign/";
 const char *MENU_SPRITE_PATHS[] = {
     "assets/sprites/menu/play.png",
     "assets/sprites/menu/settings.png",
-    "assets/sprites/menu/exit.png"
+    "assets/sprites/menu/exit.png",
+    "assets/sprites/menu/howto.png"
 };
 const char *MENU_SPRITE_HOVER_PATHS[] = {
     "assets/sprites/menu/play-down.png",
     "assets/sprites/menu/settings-down.png",
-    "assets/sprites/menu/exit-down.png"
+    "assets/sprites/menu/exit-down.png",
+    "assets/sprites/menu/howto-down.png"
 };
 const Vector MENU_SPRITE_POS[] = {
-    { 155.5, 140.0 },
-    { 155.5, 250.0 },
-    { 332.6, 250.0 }
+    { 155.5, 100.0 },
+    { 155.5, 210.0 },
+    { 245.0, 300.0 },
+    { 332.6, 210.0 }
 };
 
 /// @todo fix this

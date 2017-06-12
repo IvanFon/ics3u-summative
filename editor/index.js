@@ -1,7 +1,7 @@
-let canvas = document.querySelector("#canvas");
-let ctx = canvas.getContext("2d");
+let canvas = document.querySelector('#canvas');
+let ctx = canvas.getContext('2d');
 let curCol = 1;
-let saveText = document.querySelector("#save");
+let saveText = document.querySelector('#save');
 
 const tileSize = 16;
 const gridSize = 1;
@@ -40,7 +40,7 @@ const roundDown = (num, multiple) => {
 // Draw tiles
 const drawTiles = (tiles, ctx) => {
   // Grid background
-  ctx.fillStyle = "rgb(0, 0, 0)";
+  ctx.fillStyle = 'rgb(0, 0, 0)';
   ctx.fillRect(0, 0, 640, 480);
   for (let y = 0; y < tiles.length; y++) {
     for (let x = 0; x < tiles[y].length; x++) {
@@ -102,37 +102,28 @@ const getMouse = e => {
 let mouseDown = false;
 
 // Get mouse clicks
-canvas.addEventListener("mousedown", e => {
+canvas.addEventListener('mousedown', e => {
   mouseDown = true;
   placeTile(e);
 });
 
-canvas.addEventListener("mousemove", e => {
+canvas.addEventListener('mousemove', e => {
   if (mouseDown) {
     placeTile(e);
   }
 });
 
-canvas.addEventListener("mouseup", () => {
+canvas.addEventListener('mouseup', () => {
   mouseDown = false;
 });
 
 const save = tiles => {
   let saveTiles = [];
   for (let y = 0; y < levelSize.y; y++) {
-    saveTiles.push(tiles[y].join(" "));
+    saveTiles.push(tiles[y].join(' '));
   }
   saveText.value = `${spawnPos.x} ${spawnPos.y}\n${saveTiles.join('\n')}`;
 };
-
-const clear = (tiles, tile) => {
-    for (var y = 0; y < tiles.length; y++) {
-        for (var x = 0; x < tiles[y].length; x++) {
-            tiles[y][x] = tile;
-        }
-    }
-    drawTiles(tiles, ctx);
-}
 
 const buttons = document.querySelectorAll('input[type=radio][name=tile]');
 for (let button of buttons) {
@@ -145,5 +136,30 @@ for (let button of buttons) {
     }
   });
 }
+
+document.querySelector('#fill').addEventListener('mousedown', e => {
+  if (confirm("This will erase your current level. Are you sure?")) {
+    for (let y = 0; y < tiles.length; y++) {
+      for (let x = 0; x < tiles[y].length; x++) {
+        tiles[y][x] = curCol;
+      }
+    }
+    drawTiles(tiles, ctx);
+  }
+});
+
+// Keybinds
+document.addEventListener('keydown', e => {
+  let char = String.fromCharCode(e.keyCode);
+  if (char < 5) {
+    if (char < 4) {
+      curCol = char - 1;
+      buttons[char - 1].checked = true;
+    } else {
+    curCol = 'spawn';
+    buttons[3].checked = true;
+    }
+  }
+});
 
 drawTiles(tiles, ctx);

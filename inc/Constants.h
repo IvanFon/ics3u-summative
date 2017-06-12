@@ -24,7 +24,7 @@ const int NUM_TEXTURES = 3;
 extern const char *TEXTURE_FOLDER;
 
 /// @brief Number of levels to load
-const int NUM_LEVELS = 3;
+const int NUM_LEVELS = 6;
 /// @brief Level folder
 extern const char *LVL_FOLDER;
 
@@ -32,10 +32,11 @@ extern const char *LVL_FOLDER;
 enum MENU_SPRITES {
     MENU_PLAY = 0,
     MENU_SETTINGS,
-    MENU_EXIT
+    MENU_EXIT,
+    MENU_HOWTO
 };
 /// @brief Number of menu sprites
-const int NUM_MENU_SPRITES = 3;
+const int NUM_MENU_SPRITES = 4;
 /// @brief Menu sprite paths
 extern const char *MENU_SPRITE_PATHS[];
 /// @brief Hovered menu sprite paths
