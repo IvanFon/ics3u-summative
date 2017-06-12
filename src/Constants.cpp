@@ -31,7 +31,6 @@ const Vector MENU_SPRITE_POS[] = {
     { 332.6, 210.0 }
 };
 
-/// @todo fix this
 const Rectangle SETTINGS[] = {
     {
         { 275, 85 },

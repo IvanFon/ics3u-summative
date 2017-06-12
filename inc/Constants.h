@@ -24,7 +24,7 @@ const int NUM_TEXTURES = 4;
 extern const char *TEXTURE_FOLDER;
 
 /// @brief Number of levels to load
-const int NUM_LEVELS = 6;
+const int NUM_LEVELS = 11;
 /// @brief Level folder
 extern const char *LVL_FOLDER;
 

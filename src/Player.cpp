@@ -18,6 +18,7 @@
 Vector playerVel = { 0, 0 };
 
 void handleCollisions(bool xAxis = true) {
+    bool changed = false;
     for (int y = 0; y < LVL_HEIGHT; y++) {
         for (int x = 0; x < LVL_WIDTH; x++) {
             // Store current tile
@@ -30,6 +31,7 @@ void handleCollisions(bool xAxis = true) {
                 	if (curTile.texture == 2) {
                         // Reset velocity
                         playerVel = { 0, 0 };
+                        player.rect.pos = { 0, 0 };
                         // Reset input
                         input = { false, false, false, false, false, false };
                         // Change level
@@ -37,8 +39,9 @@ void handleCollisions(bool xAxis = true) {
                             curLvl = 0;
                             levelLoaded = false;
                             showMenu();
-                        } else {
+                        } else if (!changed) {
                             curLvl++;
+                            changed = true;
                         }
                         levelLoaded = false;
                     // Death tile
