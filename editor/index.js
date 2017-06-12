@@ -54,6 +54,9 @@ const drawTiles = (tiles, ctx) => {
         case 2:
           ctx.fillStyle = 'rgb(218, 129, 39)';
           break;
+        case 3:
+          ctx.fillStyle = 'rgb(178, 0, 255)';
+          break;
       } // \switch
       
       // Draw square
@@ -151,13 +154,13 @@ document.querySelector('#fill').addEventListener('mousedown', e => {
 // Keybinds
 document.addEventListener('keydown', e => {
   let char = String.fromCharCode(e.keyCode);
-  if (char < 5) {
-    if (char < 4) {
+  if (char < 6) {
+    if (char < 5) {
       curCol = char - 1;
       buttons[char - 1].checked = true;
     } else {
-    curCol = 'spawn';
-    buttons[3].checked = true;
+      curCol = 'spawn';
+      buttons[4].checked = true;
     }
   }
 });

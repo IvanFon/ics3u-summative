@@ -1,7 +1,7 @@
-CC ?= g++
+CC = x86_64-w64-mingw32-g++
 CPPFLAGS = -std=c++11 -g
 LIBS = -Lallegro/lib -lallegro -lallegro_image -lallegro_image -lallegro_font -lallegro_ttf -lallegro_dialog
-EXE = main
+EXE = main.exe
 SRC_DIR = ./src
 SRCS = $(shell find $(SRC_DIR)/*.cpp)
 OBJS := $(SRCS:%=%.o)

@@ -19,7 +19,7 @@
 // RESOURCES
 
 /// @brief Number of textures to read
-const int NUM_TEXTURES = 3;
+const int NUM_TEXTURES = 4;
 /// @brief Texture folder
 extern const char *TEXTURE_FOLDER;
 
@@ -140,7 +140,7 @@ const float FPS = 60.0;
 extern const Vector SCREEN;
 
 /// @brief Number of solid tiles
-const int NUM_SOLID_TILES = 2;
+const int NUM_SOLID_TILES = 3;
 /// @brief Solid tiles
 extern const int SOLID_TILES[];
 

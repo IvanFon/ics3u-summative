@@ -16,10 +16,11 @@ void showIntructions() {
     bool mouseDown = false;
     // Text to draw
     const char *text[] = {
-        "You are the red cube.",
-        "You can move with WASD or the arrow keys.",
+        "Move with WASD or the arrow keys.",
         "Your goal is to reach the orange cube.",
         "If you fall off a platform, you may jump once in midair.",
+        "Touching purple blocks will kill you... so don't do that.",
+        "Press escape to go back to the menu.",
         "Good luck!"
     };
 
@@ -56,7 +57,7 @@ void showIntructions() {
 
             case ALLEGRO_EVENT_KEY_DOWN:
                 if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-                    quitGame();
+                    return;
                 }
                 break;
         } // \switch
@@ -84,7 +85,7 @@ void showIntructions() {
             drawSprite((backHover) ? settingsBackSprite[1] : settingsBackSprite[0]);
 
             // Draw instructions
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 7; i++) {
                 al_draw_text(fonts.robotoReg, COL_WHITE, SCREEN.x / 2, (i * 25) + 125, ALLEGRO_ALIGN_CENTRE, text[i]);
             }
 

@@ -41,7 +41,14 @@ void handleCollisions(bool xAxis = true) {
                             curLvl++;
                         }
                         levelLoaded = false;
-					} else if (xAxis) {
+                    // Death tile
+					} else if (curTile.texture == 3) {
+                        // Reset velocity and input
+                        playerVel = { 0, 0 };
+                        input = { false, false, false, false, false, false };
+                        // Restart level
+                        levelLoaded = false;
+                    } else if (xAxis) {
                         player.rect.pos.x += collisionDepthX(player.rect, curTile.rect);
                         playerVel.x = 0;
                     } else {
@@ -102,6 +109,9 @@ void verticalMove() {
 
     // Check if player fell out of world
     if (player.rect.pos.y + player.rect.size.y >= SCREEN.y) {
+        // Reset velocity and input
+        playerVel = { 0, 0 };
+        input = { false, false, false, false, false, false };
         // Restart level
         levelLoaded = false;
     }

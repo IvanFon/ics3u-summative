@@ -84,4 +84,4 @@ const Vector PLAYER_DIMENSIONS = { 16, 32 };
 
 const Vector SCREEN = { 640, 480 };
 
-const int SOLID_TILES[] = { 0, 2 };
+const int SOLID_TILES[] = { 0, 2, 3 };

@@ -94,7 +94,7 @@ void showLevelSelect() {
 
             case ALLEGRO_EVENT_KEY_DOWN:
                 if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-                    quitGame();
+                    return;
                 }
                 break;
         } // \switch

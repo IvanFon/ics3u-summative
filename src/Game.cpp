@@ -57,7 +57,7 @@ void gameLoop() {
         // Input changed
         if (inputChanged) {
             if (input.escape) {
-                quitGame();
+                return;
             }
         }
         
