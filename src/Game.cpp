@@ -22,6 +22,7 @@ bool levelLoaded = false;
 void gameLoop() {
     al_start_timer(timer);
     bool redraw = true;
+    bool update = false;
     bool inputChanged = false;
     while (true) {
         // Finish loading level
@@ -41,6 +42,7 @@ void gameLoop() {
 
             case ALLEGRO_EVENT_TIMER:
                 redraw = true;
+                update = true;
                 break;
 
             case ALLEGRO_EVENT_KEY_DOWN:
@@ -61,7 +63,10 @@ void gameLoop() {
             }
         }
         
-        runState();
+        if (update) {
+          update = false;
+          runState();
+        }
         
         inputChanged = false;
         
